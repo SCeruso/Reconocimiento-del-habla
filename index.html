@@ -63,7 +63,7 @@
                         interimResult += event.results[i][0].transcript;
                     }
                 }
-                if (finalResult == "cambio")
+                if (finalResult.localeCompare("cambio"))
                     console.log("cambio");
                 console.log(finalResult);
                 console.log(interimResult);
