@@ -65,6 +65,7 @@
                         interimResult += event.results[i][0].transcript;
                     }
                 }
+                finalResult = finalResult.replace(" ", "");
                 if (finalResult != "" && finalResult == ("cambio")) {
                     if (color)
                         document.getElementById("mic").style.background = 'green';
@@ -72,8 +73,7 @@
                         document.getElementById("mic").style.background = 'red';
                     color = 1 - color;
                 }
-             //   console.log(finalResult);
-              //  console.log(interimResult);
+     
                 finalTranscript.value = finalResult;
                 areaResult.value = interimResult;
 
