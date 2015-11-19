@@ -12,6 +12,8 @@
         <button type="button" id="mic">CLICK</button>
     </section>
     <script>
+        var color = 1;
+
         window.onload = function () {
 
             var recognition = new webkitSpeechRecognition();
@@ -63,8 +65,13 @@
                         interimResult += event.results[i][0].transcript;
                     }
                 }
-                if (finalResult.localeCompare("cambio"))
-                    document.getElementById("mic").style.background = 'green';
+                if (finalResult.localeCompare("cambio")) {
+                    if (color)
+                        document.getElementById("mic").style.background = 'green';
+                    else
+                        document.getElementById("mic").style.background = 'red';
+                    color = 1 - color;
+                }
              //   console.log(finalResult);
               //  console.log(interimResult);
                 finalTranscript.value = finalResult;
